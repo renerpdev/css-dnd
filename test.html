@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS DnD - Testing Page</title>
+</head>
+<style>
+    .dnd-draggable {
+        height: 5rem;
+        width: 5rem;
+        background-color: black;
+        cursor: grab;
+    }
+
+    .dnd-droppable {
+        height: 15rem;
+        width: 15rem;
+        border: 1px solid black;
+        padding: .5rem;
+        margin: .5rem;
+        display: inline-block;
+    }
+</style>
+
+<body>
+    <div class="dnd-droppable">
+        <div class="dnd-draggable" draggable="true"></div>
+    </div>
+    <div class="dnd-droppable">
+    </div>
+
+    <script src="node_modules//jquery//dist//jquery.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
