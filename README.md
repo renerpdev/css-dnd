@@ -1,48 +1,71 @@
-# HTML-Shell
+# CSS-DnD
 
-## <img align="center" alt="html-shell Logo" src="src/images/app-logo.png" height=80 title="html-shell"/>
+## <img align="center" alt="css-dnd example" src="src/images/example.gif" height=160 title="css-dnd example"/>
 
-### This is an HTML boilerplate for helping creation of small web apps
+### jQuery plugin for making droppable/draggable items just adding CSS classes
 
 ## Table of topics
-1. [How to install it?](#installation)
+1. [How to use it?](#use)
 1. [Description](#description)
+1. [Example](#example)
 1. [New versions of this tool](#changelog)
 1. [Further help](#help)
 
 ## Description
 
-This tool is based on 7-1 pattern for a better distribution of SASS files. It includes by default [bootstrap](https://getbootstrap.com/) and [fontawesome](https://fontawesome.com/) libs for a quick start. It also uses [pug.js](https://pugjs.org/) for HTML code reutilization and [webpack](https://webpack.js.org/) for compiling all assets even for dev or prod modes.
+This project use the native Drag & Drop function of the browser. Just adding some CSS classes to the element this plugin do the rest.
 
-## Installation
+<h2 id="use">Use steps</h2>
 
-First of all you need to clone this project
+First need to install the package from NPM
 
-> #### `git clone https://github.com/2rhop/html_shell.git`
+> ### `npm i -S css-dnd`
 
-### For development
+Then import it within the BODY tag
 
-> #### `npm i`
-> #### `npm start`
+```html
+<body>
+    ...
+    <script src="./node_modules/css-dnd/dist/css-dnd.min.js"></script>
+</body>
+```
 
- The application will run on 3001 port
+> ### Do not forget to import jQuery before this !!
 
-##### If you want to skip prev commands just type `npm run init`. This command can only be executed once.
+Once you have done all the importation steps, you need to add the class to the elements
 
-### For production
+```html
+<body>
+    ...
+    <div class="dnd-droppable">
+        <div class="dnd-draggable"></div>
+    </div> 
+    <div class="dnd-droppable"></div>    
+</body>
+```
 
-> #### `npm i`
-> #### `npm run build`
+> If you want the default styles just add the css file within the HEAD tag
 
-The production files will be inside dist/ folder
+```html
+<head>
+    ...
+    <link rel="stylesheet" href="./node_modules/css-dnd/dist/css-dnd.min.css">
+</head>
+```
+
+<h2 id="example">Example with default styles </h2>
+
+## <img align="center" alt="css-dnd example" src="src/images/example.gif" height=160 title="css-dnd example"/>
+
+> You can style it at your own way just using the provided classes 
 
 ## Changelog
 
-Get update with all new versions [here](https://github.com/2rhop/html_shell/releases)
+Get update with all new versions [here](https://github.com/2rhop/css-dnd/releases)
 
 ## Licence
-Copyright (c) 2019 Rene Ricardo. Licensed under the [MIT](https://github.com/2rhop/html_shell/blob/master/LICENSE) license.
+Copyright (c) 2019 Rene Ricardo. Licensed under the [MIT](https://github.com/2rhop/css-dnd/blob/master/LICENSE) license.
 
 ## Help
 
-Send me an [email](mailto:renerp2016@gmail.com) if you have some doubt or just add an [issue](https://github.com/2rhop/html_shell/issues)
+Send me an [email](mailto:renerp2016@gmail.com) if you have some doubt or just add an [issue](https://github.com/2rhop/css-dnd/issues)
