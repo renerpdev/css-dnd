@@ -1,6 +1,6 @@
 # CSS-DnD
 
-## <img align="center" alt="css-dnd example" src="src/images/example1.gif" height=160 title="css-dnd example"/>
+## <img align="center" alt="css-dnd example" src="https://raw.githubusercontent.com/2rhop/css-dnd/master/src/images/example1.gif" height=160 title="css-dnd example"/>
 
 ### jQuery plugin for making droppable/draggable items just adding CSS classes
 
@@ -55,7 +55,7 @@ Once you have done all the importation steps, you need to add the class to the e
 
 <h2 id="example">Some basic examples</h2>
 
-## <img align="center" alt="css-dnd example" src="src/images/example1.gif" height=160 title="css-dnd example"/> <img align="center" alt="css-dnd example" src="src/images/example2.gif" height=160 title="css-dnd example"/> <img align="center" alt="css-dnd example" src="src/images/example3.gif" height=160 title="css-dnd example"/> <img align="center" alt="css-dnd example" src="src/images/example4.gif" height=160 title="css-dnd example"/>
+## <img align="center" alt="css-dnd example" src="https://raw.githubusercontent.com/2rhop/css-dnd/master/src/images/example1.gif" height=160 title="css-dnd example"/> <img align="center" alt="css-dnd example" src="https://raw.githubusercontent.com/2rhop/css-dnd/master/src/images/example2.gif" height=160 title="css-dnd example"/> <img align="center" alt="css-dnd example" src="https://raw.githubusercontent.com/2rhop/css-dnd/master/src/images/example3.gif" height=160 title="css-dnd example"/> <img align="center" alt="css-dnd example" src="https://raw.githubusercontent.com/2rhop/css-dnd/master/src/images/example4.gif" height=160 title="css-dnd example"/>
 
 > You can style it at your own way just using the provided classes 
 
