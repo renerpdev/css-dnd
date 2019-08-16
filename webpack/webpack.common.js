@@ -9,14 +9,7 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                test: /\.html$/,
-                use: [
-                    {
-                        loader: "html-loader",
-                    }
-                ]
-            },
+           
             {
                 test: /\.pug$/,
                 use: ['pug-loader']
@@ -53,11 +46,6 @@ module.exports = {
 
     plugins: [
         new webpack.ProgressPlugin(),
-        new HtmlWebpackPlugin({
-            template: path.resolve("./src/index.pug"),
-            // template: "./src/index.html",
-            filename: "./index.html"
-        }),
         new CleanWebpackPlugin(),
     ],
 };

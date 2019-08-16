@@ -42,8 +42,8 @@ module.exports = merge(baseConfig, {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: '[name].min.css',
-            chunkFilename: '[id].min.css'
+            filename: 'css-dnd.min.css',
+            chunkFilename: 'css-dnd.min.css'
         }),
         // Minify CSS
         new webpack.LoaderOptionsPlugin({

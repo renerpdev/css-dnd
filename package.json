@@ -2,7 +2,7 @@
   "name": "css-dnd",
   "version": "0.1.0",
   "description": "jquery plugin for making droppable/draggable items just adding css classes",
-  "main": "index.js",
+  "main": "dist/css-dnd.min.js",
   "scripts": {
     "init": "git init && git add . && git commit --message \"first commit\" && npm i && npm run start",
     "build": "webpack  --mode production --config webpack/webpack.prod.js",

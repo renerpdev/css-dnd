@@ -16,6 +16,14 @@ module.exports = merge(baseConfig, {
     module: {
         rules: [
             {
+                test: /\.html$/,
+                use: [
+                    {
+                        loader: "html-loader",
+                    }
+                ]
+            },
+            {
                 test: /\.s?css$/,
                 use: [
                     'style-loader',
@@ -34,6 +42,11 @@ module.exports = merge(baseConfig, {
         // Minify CSS
         new webpack.LoaderOptionsPlugin({
             minimize: false,
+        }),
+        new HtmlWebpackPlugin({
+            template: path.resolve("./src/index.pug"),
+            // template: "./src/index.html",
+            filename: "./index.html"
         }),
     ]
 });
