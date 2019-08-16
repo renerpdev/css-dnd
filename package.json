@@ -1,6 +1,6 @@
 {
   "name": "css-dnd",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "jquery plugin for making droppable/draggable items just adding css classes",
   "main": "dist/css-dnd.min.js",
   "scripts": {
