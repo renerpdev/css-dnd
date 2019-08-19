@@ -1,6 +1,6 @@
 {
   "name": "css-dnd",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "jQuery plugin for making droppable/draggable html elements just adding css classes",
   "main": "dist/css-dnd.min.js",
   "scripts": {
@@ -17,7 +17,11 @@
     "url": "https://github.com/2rhop/css-dnd/issues"
   },
   "keywords": [
-    "DnD","jquery","css","drag & drop","javascript"
+    "DnD",
+    "jquery",
+    "css",
+    "drag & drop",
+    "javascript"
   ],
   "author": "",
   "license": "MIT",
