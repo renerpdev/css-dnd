@@ -54,10 +54,11 @@ Once you have done all the importation steps, you need to add the class to the e
 ```
 
 <h2 id="example">Some basic examples</h2>
+You can style it at your own way ussing the provided classes.
 
 ## <img align="center" alt="css-dnd example" src="https://raw.githubusercontent.com/2rhop/css-dnd/master/src/images/example1.gif" height=160 title="css-dnd example"/> <img align="center" alt="css-dnd example" src="https://raw.githubusercontent.com/2rhop/css-dnd/master/src/images/example2.gif" height=160 title="css-dnd example"/> <img align="center" alt="css-dnd example" src="https://raw.githubusercontent.com/2rhop/css-dnd/master/src/images/example3.gif" height=160 title="css-dnd example"/> <img align="center" alt="css-dnd example" src="https://raw.githubusercontent.com/2rhop/css-dnd/master/src/images/example4.gif" height=160 title="css-dnd example"/>
 
-> You can style it at your own way just using the provided classes 
+> ### <b>Note:</b> When the event listener `dragover` is triggered the element will get the class "dnd-dragging".
 
 ## Changelog
 

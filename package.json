@@ -1,7 +1,7 @@
 {
   "name": "css-dnd",
   "version": "1.0.1",
-  "description": "jquery plugin for making droppable/draggable items just adding css classes",
+  "description": "jQuery plugin for making droppable/draggable html elements just adding css classes",
   "main": "dist/css-dnd.min.js",
   "scripts": {
     "init": "git init && git add . && git commit --message \"first commit\" && npm i && npm run start",
@@ -9,8 +9,15 @@
     "dev": "webpack  --mode development --config webpack/webpack.dev.js",
     "start": "webpack-dev-server --mode development --config webpack/webpack.dev.js --open"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/2rhop/css-dnd.git"
+  },
+  "bugs": {
+    "url": "https://github.com/2rhop/css-dnd/issues"
+  },
   "keywords": [
-    "dnd,jquery,css"
+    "DnD","jquery","css","drag & drop","javascript"
   ],
   "author": "",
   "license": "MIT",

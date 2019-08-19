@@ -35,9 +35,8 @@ const onDragOver = function (selector) {
 const onDragEnter = function (selector) {
     selector.on('dragenter', function (ev) {
         ev.preventDefault();
-        $(this).addClass('dnd--dragging')
     })
-};
+}; 
 const onDragStart = function (selector) {
     selector.on('dragstart', function (ev) {
         ev.originalEvent.dataTransfer.setData('text', ev.target.id);

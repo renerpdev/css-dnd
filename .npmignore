@@ -4,3 +4,4 @@ webpack/
 .babelrc
 postcss.config.js
 .git
+CHANGELOG.md
