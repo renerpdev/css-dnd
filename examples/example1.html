@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <title>CSS-DnD Example #1</title>
+</head>
+<style>
+    .box {
+        height: 15rem;
+        width: 15rem;
+        border: 3px solid black;
+        padding: 0.5rem;
+        margin: 0.5rem;
+        display: inline-block;
+    }
+
+    .item {
+        height: 5rem;
+        width: 5rem;
+        background-color: black;
+        cursor: grab;
+    }
+</style>
+
+<body>
+
+    <div class="box">
+        <div class="item"></div>
+    </div>
+    <div class="box">
+    </div>
+
+    <script src="../dist/css-dnd.min.js"></script>
+    <script>
+        $('.box').droppable({ draggingClass: 'dashed' })
+        $('.item').draggable({idPrefix:'dnd-item__'})
+    </script>
+</body>
+
+</html>

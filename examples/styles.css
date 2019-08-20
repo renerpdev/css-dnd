@@ -1,0 +1,13 @@
+.dashed {
+  border-style: dashed !important;
+}
+.scaled {
+  transform: scale(1.1);
+}
+.transformed {
+  border-radius: 50%;
+  border-color: rgba(255,0,0, 0.5) !important;
+}
+.colored {
+  background-color: rgba(255,0,0, 0.5) !important;
+}
