@@ -2,7 +2,7 @@
 
 ![license](https://img.shields.io/github/license/2rhop/css-dnd.svg)
 [![GitHub (pre-)release](https://img.shields.io/github/release/2rhop/css-dnd/all.svg)](https://github.com/2rhop/knex-seeder/releases)
-<img alt="npm" src="https://img.shields.io/npm/dw/css-dnd">
+<img alt="npm" src="https://img.shields.io/npm/dm/css-dnd">
 ====
 
 ## <img align="center" alt="css-dnd example" src="https://raw.githubusercontent.com/2rhop/css-dnd/master/src/images/example1.gif" height=160 title="css-dnd example"/>
@@ -20,6 +20,8 @@
 ## Description
 
 This project use the native Drag & Drop function of the browser. Just adding some CSS classes to the element this plugin do the rest.
+
+<b>[Demo page](https://www.jqueryscript.net/demo/drag-drop-css-dnd)</b>
 
 <h2 id="use">Use steps</h2>
 
@@ -57,6 +59,13 @@ If you want the default styles just add the css file within the HEAD tag
     ...
     <link rel="stylesheet" href="./node_modules/css-dnd/dist/css-dnd.min.css">
 </head>
+```
+
+### You can also import js and styles from a CDN
+```html
+<link href="https://cdn.jsdelivr.net/npm/css-dnd@latest/dist/css-dnd.min.css" rel="stylesheet" />
+<script src="/path/to/cdn/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/css-dnd@latest/dist/css-dnd.min.js"></script>
 ```
 
 <h2 id="customize">Customization</h2>
