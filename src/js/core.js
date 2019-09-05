@@ -2,6 +2,8 @@
  ****    CSS Drag & Drop   ****
  ******************************/
 
+import 'jquery'
+
 (function ($) {
     $.fn.draggable = function (obj) {
         var _obj = obj || {};
@@ -35,14 +37,14 @@
             $this.on('dragenter', function (ev) {
                 ev.preventDefault();
             });
-            $this.on('dragend', function (ev) {
+            $this.on('dragend', function () {
                 $this.removeClass(_obj.draggingClass)
             });
             $this.on('dragover', function (ev) {
                 ev.preventDefault();
                 $this.addClass(_obj.draggingClass)
             });
-            $this.on('dragleave', function (ev) {
+            $this.on('dragleave', function () {
                 $this.removeClass(_obj.draggingClass)
             });
 

@@ -7,13 +7,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = merge(baseConfig, {
     devtool: 'source-map',
-
     devServer: {
         inline: true,
         contentBase: path.resolve('./src'),
         port: '3001',
     },
-
     module: {
         rules: [
             {
@@ -33,9 +31,31 @@ module.exports = merge(baseConfig, {
                     'sass-loader',
                 ],
             },
+            {
+                test: /\.(jpg|png|gif|svg)$/i,
+                exclude: /node-modules/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'img/[hash]-[name].[ext]'
+                        }
+                    }
+                ],
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: 'fonts/[hash]-[name].[ext]'
+                    }
+                }
+                ]
+            },
         ],
     },
-    plugins:[
+    plugins: [
         new MiniCssExtractPlugin({
             filename: '[name].css',
             chunkFilename: '[id].css'
@@ -45,8 +65,7 @@ module.exports = merge(baseConfig, {
             minimize: false,
         }),
         new HtmlWebpackPlugin({
-            template: path.resolve("./src/index.pug"),
-            // template: "./src/index.html",
+            template: path.resolve("./src/index.html"),
             filename: "./index.html"
         }),
     ]

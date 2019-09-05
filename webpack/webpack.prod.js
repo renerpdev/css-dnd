@@ -1,12 +1,17 @@
+const path = require('path');
 const merge = require('webpack-merge');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const baseConfig = require('./webpack.common.js');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 
 module.exports = merge(baseConfig, {
+    entry: {
+        'css-dnd': path.resolve('./src/js/app.js'),
+    },
     output: {
-        filename: 'css-dnd.min.js',
+        filename: '[name].min.js',
+        path: path.resolve('./dist')
     },
     module: {
         rules: [
@@ -24,28 +29,14 @@ module.exports = merge(baseConfig, {
     },
     optimization: {
         minimizer: [
-            new UglifyJsPlugin({
-                uglifyOptions: {
-                    warnings: false,
-                    parse: {},
-                    compress: {},
-                    mangle: true, // Note `mangle.properties` is `false` by default.
-                    output: null,
-                    toplevel: false,
-                    nameCache: null,
-                    extractComments: true,
-                    ie8: false,
-                    keep_fnames: false,
-                },
-            }),
+            new TerserPlugin(),
         ],
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: 'css-dnd.min.css',
-            chunkFilename: 'css-dnd.min.css'
+            filename: '[name].min.css',
+            chunkFilename: '[chunk][name].min.css'
         }),
-        // Minify CSS
         new webpack.LoaderOptionsPlugin({
             minimize: true,
         }),

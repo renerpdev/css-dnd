@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack'); // to access built-in plugins
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 module.exports = {
     output: {
@@ -8,41 +8,24 @@ module.exports = {
     },
     module: {
         rules: [
-           
-            {
-                test: /\.pug$/,
-                use: ['pug-loader']
-            },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
-            },
-            {
-                test: /\.(jpg|png|gif|svg)$/i,
-                exclude: /node-modules/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: 'img/[hash]-[name].[ext]'
-                        }
-                    }
-                ],
-            },
-            {
-                test: /\.(woff|woff2|eot|ttf|otf)$/,
-                use: [{
-                    loader: 'file-loader',
-                    options: {
-                        name: 'fonts/[hash]-[name].[ext]'
-                    }
-                }
-                ]
-            },
+            }
         ],
     },
-
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    test: /[\\/]node_modules[\\/](jquery)[\\/]/,
+                    filename: 'vendors.bundle.js',
+                    chunks: 'all'
+                }
+            }
+        }
+    },
     plugins: [
         new webpack.ProgressPlugin(),
         new CleanWebpackPlugin(),
