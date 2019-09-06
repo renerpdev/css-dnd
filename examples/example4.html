@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <title>CSS-DnD Example #4</title>
 </head>
 <style>
@@ -30,17 +30,22 @@
 
 <body>
 
-    <div class="box">
-        <div class="item"></div>
-    </div>
-    <div class="box">
-    </div>
+<div class="box">
+    <div class="item"></div>
+</div>
+<div class="box">
+</div>
 
-    <script src="../dist/css-dnd.min.js"></script>
-    <script>
-        $('.box').droppable({ draggingClass: 'transformed' })
-        $('.item').draggable({idPrefix:'dnd-item__'})
-    </script>
+<script src="../dist/css-dnd.min.js"></script>
+<script>
+    $('.box').droppable({
+        draggingClass: 'dashed', onDrop: function (event, callback) {
+            callback();
+            alert(`Awesome you have dropped into ${event.target}`);
+        }
+    });
+    $('.item').draggable({idPrefix: 'dnd-item__'})
+</script>
 </body>
 
 </html>

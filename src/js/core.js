@@ -1,9 +1,6 @@
 /******************************
  ****    CSS Drag & Drop   ****
  ******************************/
-
-import 'jquery'
-
 (function ($) {
     $.fn.draggable = function (obj) {
         var _obj = obj || {};
@@ -14,7 +11,14 @@ import 'jquery'
             var $this = $(this);
             $this.attr('id', _obj.idPrefix + index).attr('draggable', 'true');
             $this.on('dragstart', function (ev) {
-                ev.originalEvent.dataTransfer.setData('text', ev.target.id);
+                const callback = () => {
+                    ev.originalEvent.dataTransfer.setData('text', ev.target.id)
+                };
+                if (_obj.hasOwnProperty('onDragStart')) {
+                    _obj.onDragStart(ev,callback);
+                } else {
+                    callback();
+                }
             })
         });
     };
@@ -30,22 +34,53 @@ import 'jquery'
             var $this = $(this);
             $this.on('drop', function (ev) {
                 ev.preventDefault();
-                const id = ev.originalEvent.dataTransfer.getData('text');
-                const node = $(document.getElementById(id));
-                ev.target.appendChild(node[0]);
+                const callback = () => {
+                    const id = ev.originalEvent.dataTransfer.getData('text');
+                    const node = $(document.getElementById(id));
+                    ev.target.appendChild(node[0]);
+                };
+                if (_obj.hasOwnProperty('onDrop')) {
+                    _obj.onDrop(ev,callback);
+                } else {
+                    callback();
+                }
             });
             $this.on('dragenter', function (ev) {
                 ev.preventDefault();
+                const callback = () => {
+                    $this.addClass(_obj.draggingClass);
+                };
+                if (_obj.hasOwnProperty('onDragEnter')) {
+                    _obj.onDragEnter(ev,callback);
+                }else {
+                    callback();
+                }
             });
-            $this.on('dragend', function () {
-                $this.removeClass(_obj.draggingClass)
+            $this.on('dragend', function (ev) {
+                const callback = () => {
+                    $this.removeClass(_obj.draggingClass);
+                };
+                if (_obj.hasOwnProperty('onDragEnd')) {
+                    _obj.onDragEnd(ev,callback);
+                } else {
+                    callback();
+                }
             });
             $this.on('dragover', function (ev) {
                 ev.preventDefault();
-                $this.addClass(_obj.draggingClass)
+                if (_obj.hasOwnProperty('onDragOver')) {
+                    _obj.onDragOver(ev);
+                }
             });
-            $this.on('dragleave', function () {
-                $this.removeClass(_obj.draggingClass)
+            $this.on('dragleave', function (ev) {
+                const callback = () => {
+                    $this.removeClass(_obj.draggingClass);
+                };
+                if (_obj.hasOwnProperty('onDragLeave')) {
+                    _obj.onDragLeave(ev,callback);
+                } else {
+                    callback();
+                }
             });
 
         });

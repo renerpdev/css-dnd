@@ -29,26 +29,25 @@ First need to install the package from NPM
 
 > ### `npm i -S css-dnd`
 
-Then import it within the BODY tag
+Then import css-dnd and jQuery within the BODY tag
 
 ```html
 <body>
     ...
-    <script src="./node_modules/css-dnd/dist/css-dnd.min.js"></script>
+    <script src="/path/to/jquery.min.js"></script>
+    <script src="/path/to/css-dnd/dist/css-dnd.min.js"></script>
 </body>
 ```
-
-> ### Do not forget to import jQuery before this !!
 
 Once you have done all the importation steps, you need to add the class to the elements
 
 ```html
 <body>
-    ...
     <div class="dnd-droppable">
         <div class="dnd-draggable"></div>
     </div> 
     <div class="dnd-droppable"></div>    
+    ...
 </body>
 ```
 
@@ -72,12 +71,47 @@ If you want the default styles just add the css file within the HEAD tag
 You can also change the default css classes just calling the plugin directly in your javascript code:
 
 ```javascript
-    $('.dnd-droppable').droppable({draggingClass:'dragging'});// for droppable elements
+    $('.dnd-droppable').droppable({draggingClass:'dnd--dragging'});// for droppable elements
     $('.dnd-draggable').draggable({idPrefix:'dnd-draggable-item_'});// for draggable elements
 ```
- `draggingClass:` changes the droppable element's default on-dragging class (default value:  <b>_dnd--dragging_</b>)
+ #### `draggingClass:` changes the droppable element's default on-dragging class (default value:  <b>_dnd--dragging_</b>)
 
- `idPrefix:` changes the draggable element's default id (default value: <b>_dnd-draggable-item_</b>)
+ #### `idPrefix:` changes the draggable element's default id (default value: <b>_dnd-draggable-item_</b>)
+
+Also you can listening to each DnD event like:
+
+### **Draggable options:**
+
+```javascript
+    $('.dnd-draggable').draggable({
+        onDragStart: function(event,callback){
+            console.log('Oh you drag me')
+            // do something here before...
+            callback() // call the default ondragstart behavior
+        }
+    });
+```
+#### `onDragStart(ev,callback):` Listening to *ondragstart* event
+
+### **Droppable options:**
+
+```javascript
+    $('.dnd-droppable').droppable({
+        onDrop: function(event,callback){
+            console.log(`Oh you drop me into ${event.target}!`)
+            // do something here before...
+            callback() // call the default ondrop behavior
+        }
+    });
+```
+
+#### `onDrop(ev,callback):` Listening to *ondrop* event
+#### `onDragEnter(ev,callback):` Listening to *ondragenter* event
+#### `onDragEnd(ev,callback):` Listening to *ondragend* event
+#### `onDragOver(ev,callback):` Listening to *ondragover* event
+#### `onDragLeave(ev,callback):` Listening to *ondragleave* event
+
+> **note:** *event* is the event data and *callback* is the default event behavior function 
 
 <h2 id="example">Some basic examples</h2>
 You can style it at your own way ussing the provided classes.
