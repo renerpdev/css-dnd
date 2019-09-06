@@ -19,7 +19,7 @@ module.exports = {
         splitChunks: {
             cacheGroups: {
                 commons: {
-                    test: /[\\/]node_modules[\\/](jquery)[\\/]/,
+                    test: /[\\/]node_modules[\\/]/,
                     filename: 'vendors.bundle.js',
                     chunks: 'all'
                 }
@@ -28,6 +28,6 @@ module.exports = {
     },
     plugins: [
         new webpack.ProgressPlugin(),
-        new CleanWebpackPlugin(),
+        new CleanWebpackPlugin()
     ],
 };

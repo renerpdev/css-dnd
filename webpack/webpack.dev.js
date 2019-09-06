@@ -68,5 +68,9 @@ module.exports = merge(baseConfig, {
             template: path.resolve("./src/index.html"),
             filename: "./index.html"
         }),
+        new webpack.ProvidePlugin({
+            'jQuery': 'jquery',
+            '$': 'jquery',
+        })
     ]
 });
