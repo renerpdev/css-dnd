@@ -19,7 +19,7 @@
 
 ## Description
 
-This project use the native Drag & Drop function of the browser. Just adding some CSS classes to the element this plugin do the rest.
+This plugin uses the native Drag & Drop function of the browser. Just add some CSS classes to the element and this plugin does the rest.
 
 <b>[Demo page](https://www.jqueryscript.net/demo/drag-drop-css-dnd)</b>
 
